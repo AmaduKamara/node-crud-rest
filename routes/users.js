@@ -19,7 +19,7 @@ router.post("/", (req, res) => {
 });
 
 // GET /users/:id
-router.get("/users/:id", (req, res) => {
+router.get("/:id", (req, res) => {
   const { id } = req.params;
   const user = users.find((user) => user.id === id);
   res.send(user);

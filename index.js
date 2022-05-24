@@ -21,7 +21,7 @@ app.get("/", (req, res) => res.send("Hello from Homepage"));
 app.use("/users", usersRoutes);
 
 // GET /users/:id
-app.use("/users/:id", usersRoutes);
+app.use("/users", usersRoutes);
 
 // server listening
 app.listen(PORT, () =>

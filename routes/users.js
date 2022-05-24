@@ -4,20 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 const router = express.Router();
 
 // Mock database for users
-const users = [
-  {
-    firstName: "John",
-    lastName: "Doe",
-    email: "john@email.com",
-    age: 21,
-  },
-  {
-    firstName: "Samuel",
-    lastName: "Amkam",
-    email: "amkam@email.com",
-    age: 78,
-  },
-];
+const users = [];
 
 // GET /users
 router.get("/", (req, res) => {

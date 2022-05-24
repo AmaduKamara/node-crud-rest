@@ -1,5 +1,8 @@
 import express from "express";
 
+// routes
+import usersRoutes from "./routes/users.js";
+
 // express app
 const app = express();
 
@@ -8,6 +11,12 @@ const PORT = 5000;
 
 // middleware
 app.use(express.json());
+
+// routes
+
+// GET
+app.get("/", (req, res) => res.send("Hello from Homepage"));
+app.use("/users", usersRoutes);
 
 // server listening
 app.listen(PORT, () =>

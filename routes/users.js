@@ -13,14 +13,21 @@ const users = [
   {
     firstName: "Samuel",
     lastName: "Amkam",
-    email: "john@email.com",
+    email: "amkam@email.com",
     age: 78,
   },
 ];
 
 // GET /users
 router.get("/", (req, res) => {
-  res.send("Hello");
+  res.send(users);
 });
+
+// POST /users
+router.post("/", (req, res) => {
+  const user = req.body
+  users.push(user);
+  res.send(user);
+})
 
 export default router;

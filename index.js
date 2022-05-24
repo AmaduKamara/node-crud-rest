@@ -16,7 +16,12 @@ app.use(express.json());
 
 // GET
 app.get("/", (req, res) => res.send("Hello from Homepage"));
+
+// GET /users
 app.use("/users", usersRoutes);
+
+// GET /users/:id
+app.use("/users/:id", usersRoutes);
 
 // server listening
 app.listen(PORT, () =>

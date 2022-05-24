@@ -32,4 +32,22 @@ router.delete("/:id", (req, res) => {
   res.send(users);
 });
 
+// PATCH /users/:id => Update a user using the PATCH method
+router.patch("/:id", (req, res) => {
+  // 1. Get the id from params
+  const { id } = req.params;
+  // 2. Find the user by the id
+  const user = users.find((user) => user.id === id);
+  // 3. Get the request body data that is changed
+  const { firstName, lastName, email, age } = req.body;
+
+  // 4. Update what is changed
+  if (firstName) user.firstName = firstName;
+  if (lastName) user.lastName = lastName;
+  if (email) user.email = email;
+  if (age) user.age = age;
+
+  res.send(user);
+});
+
 export default router;
